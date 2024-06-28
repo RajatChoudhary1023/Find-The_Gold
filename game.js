@@ -1,5 +1,6 @@
 let yellowx=0;
 let yellowy=0;
+let moves=0;
     document.getElementById('rock').addEventListener('click',function(event) {
         const container = document.getElementById("container");
         const x = event.pageX-20 - container.offsetLeft;
@@ -11,7 +12,7 @@ let yellowy=0;
         yellowx+=random1;
         yellowy+=random2;
         document.getElementById('rock').style.visibility="hidden";
-        document.getElementById('comp').style.opacity=0;
+        document.getElementById('comp').style.opacity=1;
     });
 
 
@@ -28,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function() {
         square.style.left = x + "px";
         square.style.top = y + "px";
 
-
+        moves+=1;
             const yellow=document.getElementById('comp');
             const red=document.querySelector('.square');
 
@@ -64,7 +65,7 @@ function makediv() {
     const win=document.createElement('div');
     win.className='youwin';
     document.getElementById('container').appendChild(win);
-    document.querySelector('.youwin').innerHTML="Congratulations! You Win 🥳";
+    document.querySelector('.youwin').innerHTML="Congratulations! You Win 🥳  Moves:"+moves;
 }
 
 
